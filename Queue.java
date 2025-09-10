@@ -1,39 +1,13 @@
-class Node {
-    private int value;
-    private Node next;
-
-    // Constroctor
-    public Node(int value) {
-        this.value = value;
-        this.next = null;
-    }
-
-    // Set next node
-    public void setNext(Node next) {
-        this.next = next;
-    }
-
-    // Get next node
-    public Node getNext() {
-        return this.next;
-    }
-
-    // Get value
-    public int getValue() {
-        return this.value;
-    }
-}
-
 public class Queue {
-    private Node front; // elemen depan
-    private Node rear; // elemen belakang
+    private Node front;
+    private Node rear;
 
     public Queue() {
         this.front = null;
         this.rear = null;
     }
 
-    public boolean isEmpty() {
+        public boolean isEmpty() {
         return front == null;
     }
 
@@ -63,7 +37,7 @@ public class Queue {
         return value;
     }
 
-    public void swapFrount() {
+    public void swapFront() {
         if (front == null || front.getNext() == null) {
             System.out.println("Queue kurang dari 2 elemen, tidak bisa di swap!");
             return;
@@ -74,7 +48,7 @@ public class Queue {
         second.setNext(front);
         front = second;
 
-        if (rear == second) { // update rear jika perlu
+        if (rear == second) {
             rear = second.getNext();
         }
 
@@ -103,11 +77,11 @@ public class Queue {
         queue.enqueue(40);
         queue.enqueue(50);
         queue.printQueue();
-        queue.swapFrount(); // tukar dua elemen depan
+        queue.swapFront(); // tukar dua elemen depan
         queue.printQueue();
         queue.dequeue();
         queue.printQueue();
         queue.dequeue();
-        queue.swapFrount(); // cek swap saat elemen kurang dari 2
+        queue.swapFront(); // cek swap saat elemen kurang dari 2
     }
 }
